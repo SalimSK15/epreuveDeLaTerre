@@ -1,11 +1,10 @@
 const args = process.argv;
 
 var valeurEntree = args[2];
-var heure = valeurEntree[0]+valeurEntree[1];
-var minutes = valeurEntree[3]+valeurEntree[4];
-
 
 if(args.length == 3){
+    var heure = valeurEntree[0]+valeurEntree[1];
+    var minutes = valeurEntree[3]+valeurEntree[4];
     if(valeurEntree[2] === ":" && heure > 12 && heure < 24 && minutes < 60 && minutes > -1){
         console.log(heure-12+":"+minutes+"PM");
         
