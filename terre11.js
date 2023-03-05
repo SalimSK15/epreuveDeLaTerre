@@ -28,18 +28,21 @@ function heure24(valeurEntree){
 }
 
 if(args.length == 3){
-    
-    heure24(valeurEntree);
-    if(heure > 12 && heure < 24 && minutes < 60 && minutes > -1){
-        console.log(heure-12+":"+minutes+"PM");
-    }else
-        if(heure == "00" && minutes < 60 && minutes > -1)
-            console.log(parseInt(heure)+12+":"+minutes+"PM");
-        else
-            if(heure > 0 && heure <= 12 && minutes < 60 && minutes > -1)
-                console.log(parseInt(heure)+":"+minutes+"AM");
+    if(valeurEntree.length > 5)
+        console.log("saisir format 24h ex : 00:00");
+    else{
+        heure24(valeurEntree);
+        if(heure > 12 && heure < 24 && minutes < 60 && minutes > -1){
+            console.log(heure-12+":"+minutes+"PM");
+        }else
+            if(heure == "00" && minutes < 60 && minutes > -1)
+                console.log(parseInt(heure)+12+":"+minutes+"PM");
             else
-                console.log("saisir format 24h ex : 00:00");
+                if(heure > 0 && heure <= 12 && minutes < 60 && minutes > -1)
+                    console.log(parseInt(heure)+":"+minutes+"AM");
+                else
+                    console.log("saisir format 24h ex : 00:00");   
+    }
 }
 else 
     if( args.length > 3)
