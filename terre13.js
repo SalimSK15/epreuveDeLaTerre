@@ -25,8 +25,11 @@ var valeurEntree03 = parseInt(args[4]);
 if(args.length == 5){
     if(!siNumerique(valeurEntree01) || !siNumerique(valeurEntree02) || !siNumerique(valeurEntree03))
         console.log("Vous avez saisi un nombre au lieu d'une chaine ");
-    else 
-        console.log(valeurMoyenne(valeurEntree01,valeurEntree02,valeurEntree03));
+    else
+        if(valeurEntree01 == valeurEntree02 && valeurEntree02 == valeurEntree03)
+            console.log("Erreur");
+        else 
+            console.log(valeurMoyenne(valeurEntree01,valeurEntree02,valeurEntree03));
 }else 
     if(args.length > 5)
         console.log("Trop d'argument !");
